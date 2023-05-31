@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 
 function ArticleCard({article}){
-  console.log(article)
     return (
       <div className="card">
         <img src={article.article_img_url}/>
