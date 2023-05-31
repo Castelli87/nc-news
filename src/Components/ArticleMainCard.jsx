@@ -44,7 +44,7 @@ function ArticleMainCard() {
         </label>
         <button>Submit</button>
       </form>
-      <CommentsList></CommentsList>
+      <CommentsList article_id={article_id}></CommentsList>
     </div>
   );
 }

@@ -41,3 +41,10 @@ justify-content: center;
 margin: 60px;
 
 }
+
+.wrapperComment{
+  border: solid black 1px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+}
