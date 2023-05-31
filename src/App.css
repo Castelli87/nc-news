@@ -32,7 +32,7 @@ align-items: center;
 }
 .mainCard img{
   max-width: 480px;
-  border-radius: 12px;
+  border-radius: 12px;}
 
 .wrapperLoading{
 display: flex;

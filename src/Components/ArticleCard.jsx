@@ -3,21 +3,12 @@
 import { Link } from "react-router-dom";
 
 
-function ArticleCard({ article }) {
-  return (
-    <div className="card">
-      <img src={article.article_img_url} />
-      <h2>{article.title}</h2>
-      <h3>{article.topic}</h3>
-      <p>Author: {article.author}</p>
-      <p>Created: {article.created_at}</p>
-      <Link to={`/articles/${article.article_id}`}>Read Me</Link>
-    </div>
-  );
+
 
 
 
 function ArticleCard({article}){
+
     return (
       <div className="card">
         <img src={article.article_img_url}/>
@@ -25,7 +16,7 @@ function ArticleCard({article}){
         <h3>{article.topic}</h3>
         <p>Author: {article.author}</p>
         <p>Created: {article.created_at}</p>
-        <Link to={`/articles/:${article.articles_id}`}>Read Me</Link>
+        <Link to={`/articles/${article.article_id}`}>Read Me</Link>
 
       </div>
 

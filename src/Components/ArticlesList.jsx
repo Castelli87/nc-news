@@ -16,15 +16,7 @@ function ArticlesList() {
 
   return (
 
-    <main>
-      <section className="wrapperList">
-        <ul className="articleList">
-      <h1>Articles List</h1>
-            {articles.map((article)=>{
-
-                return <ArticleCard key={article.article_id} article={article}/>
-            })}
-
+   
     <>
     {isLoading? (
         <div className="wrapperLoading">
