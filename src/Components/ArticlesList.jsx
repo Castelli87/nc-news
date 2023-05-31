@@ -22,7 +22,7 @@ function ArticlesList() {
         <ul className="articleList">
       <h1>Articles List</h1>
             {articles.map((article)=>{
-                console.log(article)
+
                 return <ArticleCard key={article.article_id} article={article}/>
             })}
 
