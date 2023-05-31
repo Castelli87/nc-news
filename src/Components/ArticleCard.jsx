@@ -13,7 +13,7 @@ function ArticleCard({article}){
         <h3>{article.topic}</h3>
         <p>Author: {article.author}</p>
         <p>Created: {article.created_at}</p>
-        <Link to='/Article'>Read Me</Link>
+        <Link to={`/articles/:${article.articles_id}`}>Read Me</Link>
 
       </div>
 
