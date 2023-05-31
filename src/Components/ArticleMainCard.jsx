@@ -6,7 +6,7 @@ import CommentsList from "./CommentsList";
 
 function ArticleMainCard() {
   const { article_id } = useParams();
-  console.log(article_id,'<<<use params')
+
 
   const [currentArticle, setCurrentArticle] = useState({});
 
