@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchArticle } from "../Api/api";
@@ -36,6 +37,7 @@ function ArticleMainCard() {
 
     </div>)
   
+
 }
 
 export default ArticleMainCard;

@@ -18,6 +18,7 @@ padding: 20px;
 margin: 20px;
 align-items: center;
 }
+
 .mainCard{
   display: flex;
   flex-direction:column ;
@@ -32,4 +33,11 @@ align-items: center;
 .mainCard img{
   max-width: 480px;
   border-radius: 12px;
+
+.wrapperLoading{
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 60px;
+
 }
