@@ -10,3 +10,10 @@ return ncNews
 .get(`/articles`)
 .then(({data})=> data)}
 
+ export const fetchArticle = (article_id)=>{
+
+    return ncNews
+    .get(`/articles/${article_id}`)
+    .then((resp)=>resp.data.article)
+
+} 
