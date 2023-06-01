@@ -17,3 +17,9 @@ return ncNews
     .then((resp)=>resp.data.article)
 
 } 
+export const fetchArticleCommentsById = (article_id)=>{
+    return ncNews
+    .get(`/articles/${article_id}/comments`)
+    .then((resp)=>resp.data.commentsByArticleId)
+    
+} 
