@@ -56,7 +56,7 @@ function ArticleMainCard() {
       <p>
         <button onClick={handleClick}>👍</button> {currentArticle.votes}
       </p>
-      {error ? ( <p>Refresh the page</p>):null}
+      {error ? ( <p>Somenthing Went Wrong!!!Refresh the page and try again</p>):null}
       <p>{currentArticle.created_at}</p>
       <form>
         <label>
