@@ -23,3 +23,7 @@ export const fetchArticleCommentsById = (article_id)=>{
     .then((resp)=>resp.data.commentsByArticleId)
     
 } 
+
+export const increaseVotes=(article_id)=>{
+    return ncNews.patch(`/articles/${article_id}`,{inc_votes:1})
+}
