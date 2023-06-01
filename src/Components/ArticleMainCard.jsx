@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+
 import { fetchArticle, increaseVotes } from "../Api/api";
 import CommentsList from "./CommentsList";
+
+
 
 function ArticleMainCard() {
   const { article_id } = useParams();
