@@ -15,12 +15,11 @@ return ncNews
     return ncNews
     .get(`/articles/${article_id}`)
     .then((resp)=>resp.data.article)
-    .catch((err)=>console.log(err))
-} 
 
+} 
 export const fetchArticleCommentsById = (article_id)=>{
     return ncNews
     .get(`/articles/${article_id}/comments`)
     .then((resp)=>resp.data.commentsByArticleId)
-    .catch((err)=>console.log(err))
+    
 } 

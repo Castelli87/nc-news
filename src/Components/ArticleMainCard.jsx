@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchArticle } from "../Api/api";
-import CommentsList from "./CommentsList";
+
 
 function ArticleMainCard() {
   const { article_id } = useParams();
@@ -45,6 +45,7 @@ function ArticleMainCard() {
         <button>Submit</button>
       </form>
       <CommentsList article_id={article_id}></CommentsList>
+     
     </div>
   );
 }
