@@ -15,5 +15,5 @@ return ncNews
     return ncNews
     .get(`/articles/${article_id}`)
     .then((resp)=>resp.data.article)
-    .catch((err)=>console.log(err))
+
 } 

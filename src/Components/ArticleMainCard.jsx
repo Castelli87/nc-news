@@ -37,14 +37,7 @@ function ArticleMainCard() {
         <button>👍</button> {currentArticle.votes}
       </p>
       <p>{currentArticle.created_at}</p>
-      <form>
-        <label>
-          Comment here:
-          <input type="text"></input>
-        </label>
-        <button>Submit</button>
-      </form>
-      <CommentsList></CommentsList>
+     
     </div>
   );
 }
