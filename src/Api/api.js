@@ -27,3 +27,15 @@ export const fetchArticleCommentsById = (article_id)=>{
 export const increaseVotes=(article_id)=>{
     return ncNews.patch(`/articles/${article_id}`,{inc_votes:1})
 }
+
+export const postComment = (article_id,newCommentText,user)=>{
+    console.log(user,'<<<<<<<<<<<<<<api')
+    const postBody = {'username':user,'body':newCommentText}
+    console.log(postBody,'<<<<<<api')
+    return ncNews
+    .post(`/articles/${article_id}/comments`,postBody)
+    .then(({data})=>{
+        return data.comment
+  
+    })
+}

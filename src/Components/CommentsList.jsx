@@ -1,19 +1,29 @@
-import { useState, useEffect } from "react";
-import { fetchArticleCommentsById } from "../Api/api";
+/* eslint-disable react/prop-types */
+/* import { useState, useEffect } from "react"; */
+
+
+
+/* import { fetchArticleCommentsById } from "../Api/api"; */
 
 // eslint-disable-next-line react/prop-types
-function CommentsList({ article_id }) {
-  const [comments, setComments] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+function CommentsList({comments,isCommentsLoading}) {
 
-  useEffect(() => {
+
+
+//////////////////////////////////////////////////////  
+/*   const [comments, setComments] = useState([]); */
+/////////////////////////////////////////////////////
+
+/*   const [isLoading, setIsLoading] = useState(true); */
+
+/*   useEffect(() => {
     fetchArticleCommentsById(article_id).then((res) => {
       setComments(res);
       setIsLoading(false);
     });
-  }, []);
+  }, []); */
 
-  if (isLoading) {
+  if (isCommentsLoading) {
     return (
       <div className="wrapperLoading">
         <h2 className="loading">Loading...</h2>

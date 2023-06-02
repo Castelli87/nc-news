@@ -6,7 +6,7 @@ import { UserContext } from "./contexts/userContext";
 
 function NavigationBar() {
   const user = useContext(UserContext)
-  console.log(user.username)
+
 
   return (
     <Navbar bg="dark" variant="dark">
