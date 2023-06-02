@@ -57,6 +57,14 @@ function ArticleMainCard() {
       return e.preventDefault()
     }
 
+    
+    /// create an obj with username and body 
+    // add the obj to currentComments spreding in 
+    // so call the api and attach .catch to remove the first comment 
+    // do like in the upvotes stuff 
+
+    
+
     postComment(article_id,newComment,user.username).then((res)=>{
       setPostError(false)
       setNewComment('')
