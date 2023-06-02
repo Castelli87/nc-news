@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { UserContext } from "./contexts/userContext";
 
 function NavigationBar() {
+  const user = useContext(UserContext)
+  console.log(user.username)
+
   return (
     <Navbar bg="dark" variant="dark">
       <Container fluid>
@@ -13,7 +18,7 @@ function NavigationBar() {
           <Nav.Link href="#">Topics </Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link>Davide Castelli</Nav.Link>
+          <Nav.Link>{user.username}</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
