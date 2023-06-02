@@ -12,11 +12,11 @@ function ArticleMainCard() {
   const [error,setError]=useState(false)
   const [newComment,setNewComment]=useState('')
   const user = useContext(UserContext)
-  ////////////////////////////////////////////////////
+
   const [comments, setComments] = useState([]);
   const [ isCommentsLoading,setIsCommentsLoading]=useState(true)
-  ////////////////////////////////////////////////////
-  
+
+  const [postError,setPostError]=useState(false)
 
   useEffect(() => {
     fetchArticle(article_id).then((resp) => {
@@ -40,9 +40,8 @@ function ArticleMainCard() {
         setError(true)
     })
   };
-////////////////////////////////////////////////////////////////////////////////////
+
 ////////////////UPLIFTING FROM THE CHILD COMPONENT/////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////
   useEffect(() => {
     fetchArticleCommentsById(article_id).then((res) => {
       setComments(res);
@@ -50,22 +49,27 @@ function ArticleMainCard() {
 
     });
   }, []);
-///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
   const handleSubmit=(e)=>{
-    e.preventDefault();
-    console.log(user.username,'<<<<<<<<<<<<<handleSubmit')
+    e.preventDefault()
+    if (newComment.length === 0){
+      return e.preventDefault()
+    }
 
     postComment(article_id,newComment,user.username).then((res)=>{
-      
-      console.log(res,'after all ')
+      setPostError(false)
       setNewComment('')
-      setComments((currentComments)=>{
+      setComments((currentComments)=>{ 
         return [res,...currentComments ]
-    
     })
+ 
+    }).catch(()=>{
+      setComments((currentComments)=>{
+        setPostError(true)
+        return currentComments
+      })
     })
-  
-
   }
 
   if (isLoading) {
@@ -103,6 +107,7 @@ function ArticleMainCard() {
         >   
         </textarea>
         <button >Submit</button>
+        {postError ? ( <p>Somenthing Went Wrong!!!Refresh the page and try again</p>):null}
       </form>
 
       <CommentsList comments={comments} isCommentsLoading={isCommentsLoading}></CommentsList>
