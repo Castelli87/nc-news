@@ -1,27 +1,9 @@
 /* eslint-disable react/prop-types */
-/* import { useState, useEffect } from "react"; */
 
-
-
-/* import { fetchArticleCommentsById } from "../Api/api"; */
 
 // eslint-disable-next-line react/prop-types
 function CommentsList({comments,isCommentsLoading}) {
 
-
-
-//////////////////////////////////////////////////////  
-/*   const [comments, setComments] = useState([]); */
-/////////////////////////////////////////////////////
-
-/*   const [isLoading, setIsLoading] = useState(true); */
-
-/*   useEffect(() => {
-    fetchArticleCommentsById(article_id).then((res) => {
-      setComments(res);
-      setIsLoading(false);
-    });
-  }, []); */
 
   if (isCommentsLoading) {
     return (
