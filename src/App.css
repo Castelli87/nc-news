@@ -43,8 +43,27 @@ margin: 60px;
 }
 
 .wrapperComment{
+  width: 470px;;
   border: solid black 1px;
   border-radius: 5px;
   padding: 5px;
   margin: 10px;
+}
+.wrapperComment button{
+  width: min-content;
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 470px;
+}
+
+.form textarea,label,button{
+  margin: 5px;
+  width: 100%;
+}
+.form button{
+  width:min-content;
 }
