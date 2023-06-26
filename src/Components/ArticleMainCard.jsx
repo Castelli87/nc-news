@@ -18,6 +18,8 @@ function ArticleMainCard() {
 
   const [postError,setPostError]=useState(false)
 
+  const [hasClicked,setHasClicked]=useState(false)
+
   useEffect(() => {
     fetchArticle(article_id).then((resp) => {
       setCurrentArticle(resp);
@@ -34,6 +36,7 @@ function ArticleMainCard() {
     setError(false)
    // patch request after optimistic render with a catch block for error 
     increaseVotes(article_id)
+    setHasClicked(true)
     .catch(()=>{
       setCurrentArticle((article)=>{
         return {...article, votes:article.votes - 1}});
@@ -61,13 +64,28 @@ function ArticleMainCard() {
     /// create an obj with username and body 
     // add the obj to currentComments spreding in 
     // so call the api and attach .catch to remove the first comment 
-    // do like in the upvotes stuff 
+    // do like in the upvotes stuff `
 
-    
+    const optComment={
+      article_id:article_id,
+      body:newComment,
+      author:user.username,
+      created_at: new Date().toJSON()
+    }
+    setComments([optComment,...comments])
+    setNewComment('')
+    setPostError(false)
+    postComment(article_id,newComment,user.username).catch((err)=>{
+      console.log(err)
 
-    postComment(article_id,newComment,user.username).then((res)=>{
+      setComments((currentComments)=>{
+        setPostError(true)
+        return currentComments
+      })
+    })
+
+    /* postComment(article_id,newComment,user.username).then((res)=>{
       setPostError(false)
-      setNewComment('')
       setComments((currentComments)=>{ 
         return [res,...currentComments ]
     })
@@ -77,7 +95,7 @@ function ArticleMainCard() {
         setPostError(true)
         return currentComments
       })
-    })
+    }) */
   }
 
   if (isLoading) {
@@ -99,7 +117,7 @@ function ArticleMainCard() {
 
       <p>{currentArticle.body}</p>
       <p>
-        <button onClick={handleClick}>👍</button> {currentArticle.votes}
+        <button onClick={handleClick} disabled={hasClicked}>👍</button> {currentArticle.votes}
       </p>
       {error ? ( <p>Somenthing Went Wrong!!!Refresh the page and try again</p>):null}
       <p>{currentArticle.created_at}</p>
