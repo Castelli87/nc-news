@@ -120,7 +120,7 @@ function ArticleMainCard() {
         <button onClick={handleClick} disabled={hasClicked}>👍</button> {currentArticle.votes}
       </p>
       {error ? ( <p>Somenthing Went Wrong!!!Refresh the page and try again</p>):null}
-      <p>{currentArticle.created_at}</p>
+      <p>{currentArticle.created_at.slice(0,10)} {currentArticle.created_at.slice(11,19)}</p>
 
       <form className="form" onSubmit={handleSubmit} >
         <label htmlFor="newComment">Comment here:</label>
