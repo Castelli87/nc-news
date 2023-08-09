@@ -22,7 +22,7 @@ function CommentsList({comments,isCommentsLoading}) {
               <strong>{comment.body}</strong>
             </p>
             <p>
-              {comment.author} | {comment.created_at}
+              {comment.author} | {comment.created_at.slice(0,10) } {comment.created_at.slice(11,19)}
             </p>
             <p>
               <button>👍</button> {comment.votes}

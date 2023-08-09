@@ -11,7 +11,6 @@ function NavigationBar() {
   return (
     <Navbar bg="dark" variant="dark">
       <Container fluid>
-        <Navbar.Brand href="/">Icon</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/articles">Articles</Nav.Link>

@@ -1,23 +1,23 @@
-
-.card{
+.card {
   width: 350px;
   display: flex;
   align-items: center;
   margin: 20px;
   padding: 20px;
   border: solid black 2px;
-
 }
-.card img{
+.card img {
   width: 300px;
 }
-.articleList{
-display: flex;
-flex-direction: column;
-padding: 20px;
-margin: 20px;
-align-items: center;
+
+.articleList {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  align-items: center;
 }
+
 
 .mainCard{
   display: flex;
@@ -28,30 +28,28 @@ align-items: center;
   border: solid black 1px;
   padding: 15px;
   border-radius: 15px;
-
 }
-.mainCard img{
+.mainCard img {
   max-width: 480px;
-  border-radius: 12px;}
-
-.wrapperLoading{
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 60px;
-
+  border-radius: 12px;
 }
 
-.wrapperComment{
-  width: 470px;;
+.wrapperLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px;
+}
+
+.wrapperComment {
+  width: 470px;
   border: solid black 1px;
   border-radius: 5px;
   padding: 5px;
   margin: 10px;
 }
-.wrapperComment button{
+.wrapperComment button {
   width: min-content;
-
 }
 
 .form {
@@ -60,10 +58,31 @@ margin: 60px;
   width: 470px;
 }
 
-.form textarea,label,button{
+.form textarea,
+label,
+button {
   margin: 5px;
   width: 100%;
 }
-.form button{
-  width:min-content;
+.form button {
+  width: min-content;
+}
+.homeSection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+.homeDescription {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 25px ;
+  margin-left: 70px;
+ 
+}
+.homeImage{
+  width: 70%;
+  height:60%
 }
